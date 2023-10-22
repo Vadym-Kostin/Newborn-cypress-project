@@ -1,15 +1,20 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress";
+import { configurePlugin } from "cypress-mongodb";
 
-module.exports = defineConfig({
+export default defineConfig({
   viewportHeight: 1080,
   viewportWidth: 1920,
   env: {
     email: "vadymtest@gmail.com",
-    password: "testpassword"
+    password: "testpassword",
+    mongodb: {
+      uri: "mongodb://testUser:qwerty12345@5.189.186.217:27017/?authMechanism=DEFAULT",
+      database: "admin"
+    }
   },
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      configurePlugin(on);
     },
     baseUrl: "http://5.189.186.217",
     supportFile: "cypress/support/e2e.{js,jsx,ts,tsx}",
