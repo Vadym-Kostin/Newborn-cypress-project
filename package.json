@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open:config": "npx cypress open --env email=vadymtest@gmail.com,password=testpassword",
     "cy:run:chrome": "npx cypress run --env email=vadymtest@gmail.com,password=testpassword --browser chrome",
-    "cy:run:firefox": "npx cypress run --env email=vadymtest@gmail.com,password=testpassword --browser firefox",
+    "cy:run:edge": "npx cypress run --env email=vadymtest@gmail.com,password=testpassword --browser edge",
     "generate:report": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json && npx marge mochawesome.json",
     "prepare": "husky install"
   },
