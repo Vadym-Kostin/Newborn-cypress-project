@@ -34,6 +34,7 @@ pipeline {
         always {
             sh 'npm run generate:report'        
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'mochawesome-report', reportFiles: 'mochawesome.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
-        }   cleanWs()
+            cleanWs()
+        }
     }
 }
