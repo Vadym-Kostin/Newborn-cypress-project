@@ -16,7 +16,8 @@ describe("Category suite", () => {
         cy.contains("div h5", "Category 6").click();
         for (let i = 0; i < 3; i++) {
             const randomNumber = Math.round(Math.random() * 100);
-            cy.get("input[type='number']").eq(i).clear().type(randomNumber);
+            cy.get("input[type='number']").eq(i).clear();
+            cy.get("input[type='number']").eq(i).type(randomNumber);
             cy.get("button.btn-small").eq(i).click();
         }
         cy.contains("button", "Завершити").click();

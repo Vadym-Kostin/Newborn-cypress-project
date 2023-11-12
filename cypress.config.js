@@ -2,6 +2,13 @@ import { defineConfig } from "cypress";
 import { configurePlugin } from "cypress-mongodb";
 
 export default defineConfig({
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/results',
+    overwrite: false,
+    html: false,
+    json: true,
+  },
   viewportHeight: 1080,
   viewportWidth: 1920,
   env: {
@@ -13,7 +20,7 @@ export default defineConfig({
     }
   },
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(on) {
       configurePlugin(on);
     },
     baseUrl: "http://5.189.186.217",

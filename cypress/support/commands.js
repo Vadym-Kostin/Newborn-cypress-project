@@ -79,7 +79,7 @@ Cypress.Commands.add("createPositions", () => {
                 body: {
                     category: id,
                     cost: 100,
-                    name: "Position 1"
+                    name: "Test position"
                 },
                 headers: {
                     Authorization: token
